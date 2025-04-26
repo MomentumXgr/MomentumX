@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MomentumX - Shortform Content που Καθηλώνει</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      scroll-behavior: smooth;
+    }
+    /* Menu Styling */
+    nav {
+      background-color: #6A0DAD;
+      padding: 15px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+    nav a:hover {
+      background-color: #FF7A00; /* Πορτοκαλί hover effect */
+      border-radius: 5px;
+    }
+    .burger-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .burger-menu div {
+      background-color: #fff;
+      height: 4px;
+      width: 30px;
+      margin: 5px;
+    }
+    /* Hero Section */
+    header {
+      background-color: #6A0DAD; /* Μωβ */
+      color: #ffffff;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      background-color: #FF7A00; /* Πορτοκαλί */
+      color: #ffffff;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #ff5a00; /* Ανοικτό πορτοκαλί για hover */
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+    section h2 {
+      color: #6A0DAD;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+      animation: slideIn 1s ease-out forwards;
+    }
+    .steps, .pricing, .testimonials, .faq {
+      display: grid;
+      gap: 30px;
+    }
+    .card {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #6A0DAD;
+      color: #ffffff;
+    }
+    .faq-item {
+      background: #f0f0f0;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      .burger-menu {
+        display: flex;
+      }
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #6A0DAD;
+        flex-direction: column;
+        padding: 20px;
+      }
+      nav ul li {
+        text-align: center;
+        padding: 10px;
+      }
+      nav ul li a {
+        padding: 10px;
+      }
+      nav.active ul {
+        display: flex;
+      }
+    }
+
+    /* Hide text under mobile */
+    .mobile-nav a {
+      font-size: 16px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation Menu -->
+<nav id="navbar">
+  <a href="#">MomentumX</a>
+  <div class="burger-menu" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <ul>
+    <li><a href="#how-it-works">Πώς Λειτουργεί</a></li>
+    <li><a href="#portfolio">Δείγματα Δουλειάς</a></li>
+    <li><a href="#pricing">Πακέτα</a></li>
+    <li><a href="#testimonials">Μαρτυρίες</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Επικοινωνία</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<header>
+  <h1>MomentumX</h1>
+  <p>Shortform Περιεχόμενο που Καθηλώνει<br>Βιντεογράφηση & Επεξεργασία για TikTok, Instagram, YouTube Shorts</p>
+  <a href="#contact" class="cta-button">Κλείσε Δωρεάν Συνεδρία ➔</a>
+</header>
+
+<!-- Section: Πώς Λειτουργεί -->
+<section id="how-it-works">
+  <h2>Πώς Λειτουργεί</h2>
+  <div class="steps">
+    <div class="card">
+      <h3>1. Σχεδιάζουμε</h3>
+      <p>Μαζί αναπτύσσουμε τη στρατηγική και τις ιδέες για τα γυρίσματα.</p>
+    </div>
+    <div class="card">
+      <h3>2. Βιντεογραφούμε</h3>
+      <p>Επαγγελματική λήψη στον χώρο σου ή σε στούντιο.</p>
+    </div>
+    <div class="card">
+      <h3>3. Επεξεργαζόμαστε</h3>
+      <p>Δυναμικό μοντάζ με εφέ, captions και optimization για κάθε πλατφόρμα.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Δείγματα Δουλειάς -->
+<section id="portfolio">
+  <h2>Δείγματα Δουλειάς</h2>
+  <p>*[Εδώ βάζεις embedded βίντεο ή gallery με εικόνες βίντεο]*</p>
+</section>
+
+<!-- Section: Πακέτα Υπηρεσιών -->
+<section id="pricing">
+  <h2>Πακέτα Υπηρεσιών</h2>
+  <div class="pricing">
+    <div class="card">
+      <h3>Starter Pack</h3>
+      <p>5 Βίντεο/Μήνα<br>Υπότιτλοι & Εφέ<br><strong>Ιδανικό για Creators</strong></p>
+    </div>
+    <div class="card">
+      <h3>Growth Pack</h3>
+      <p>12 Βίντεο/Μήνα<br>2 Γυρίσματα/Μήνα + Στρατηγική<br><strong>Ιδανικό για Business Accounts</strong></p>
+    </div>
+    <div class="card">
+      <h3>Pro Creator Pack</h3>
+      <p>20+ Βίντεο/Μήνα<br>Unlimited Shoots (με συνεννόηση)<br><strong>Για τους Leaders του Social Media</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Μαρτυρίες -->
+<section id="testimonials">
+  <h2>Τι Λένε οι Πελάτες μας</h2>
+  <div class="testimonials">
+    <div class="card">
+      <p>“Με τη MomentumX τα views μου απογειώθηκαν!”<br>– Αντώνης Κ.</p>
+    </div>
+    <div class="card">
+      <p>“Επαγγελματική ομάδα και άμεσο αποτέλεσμα.”<br>– Σοφία Π.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section: FAQ -->
+<section id="faq">
+  <h2>Συχνές Ερωτήσεις</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <strong>Σε ποιες περιοχές προσφέρετε βιντεογράφηση;</strong>
+      <p>Αθήνα και ευρύτερη Αττική. Για άλλες περιοχές, επικοινωνήστε μαζί μας.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Σε πόσο χρόνο παραδίδετε τα βίντεο;</strong>
+      <p>Εντός 5 εργάσιμων ημερών.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Μπορώ να έχω δικό μου
